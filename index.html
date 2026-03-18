@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  MASTER.HTML — Esqueleto compartido para las 6 plantillas    ║
+    ║  Para activar un estilo, cambia el <link> del CSS abajo:     ║
+    ║    style-salud.css   → Clínica / Dentista                    ║
+    ║    style-estetica.css → Peluquería / Spa                     ║
+    ║    style-taller.css  → Taller / Técnico                      ║
+    ║    style-gastro.css  → Gastronomía / Restaurant              ║
+    ║    style-legal.css   → Legal / Contable                      ║
+    ║    style-retail.css  → Comercio General / Retail             ║
+    ╚══════════════════════════════════════════════════════════════╝
+  -->
+
+  <!-- ► PASO 1: Cambiar el título del negocio -->
+  <title>Nombre del Negocio | Slogan Breve</title>
+
+  <!-- ► PASO 2: Cambiar el href al CSS del sector correspondiente -->
+  <link rel="stylesheet" href="style-gastro.css" />
+
+  <!-- FontAwesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Fonts se importan dentro de cada CSS de sector -->
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════
+       WHATSAPP FLOATING BUTTON
+       ► PASO 3: Reemplazar el número de WhatsApp
+         Formato: https://wa.me/CODIGO_PAIS + NUMERO
+         Ejemplo Argentina: https://wa.me/5493515551234
+  ════════════════════════════════════════════ -->
+  <a href="https://wa.me/TUNUMERODEWHATSAPP"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">¡Escribinos!</span>
+  </a>
+
+
+  <!-- ════════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════════ -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+
+      <!-- ► PASO 4: Logo — reemplazar src por la ruta de la imagen del cliente
+           Ejemplo: src="img/logo-cliente.png"
+           Si no hay logo, reemplazar todo el <img> por un <span class="logo-text">Nombre</span>
+      -->
+      <a href="#inicio" class="logo" aria-label="Ir al inicio">
+        <img src="img/logo-placeholder.png"
+             alt="Logo Nombre del Negocio"
+             class="logo-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'" />
+        <span class="logo-text" style="display:none">Tu Negocio</span>
+      </a>
+
+      <!-- Hamburguesa mobile -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#inicio"    class="nav-link">Inicio</a></li>
+          <li><a href="#nosotros"  class="nav-link">Nosotros</a></li>
+          <li><a href="#galeria"   class="nav-link">Galería</a></li>
+          <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ════════════════════════════════════════════
+       HERO SECTION
+       ► PASO 5: Imagen de fondo del Hero
+         En el CSS de cada sector: buscar .hero { background-image: url('...') }
+         O agregar un atributo inline aquí:
+         style="background-image: url('img/hero-cliente.jpg')"
+  ════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <!-- ► Editar el H1, subtítulo y texto del botón -->
+      <h1 class="hero-title">Tu Título Principal Aquí</h1>
+      <p class="hero-subtitle">Breve descripción de lo que hace tu negocio. Máximo dos líneas.</p>
+      <div class="hero-actions">
+        <!-- <a href="#contacto" class="btn btn-primary">Pedir Turno / Consultar</a>
+        <a href="#nosotros" class="btn btn-secondary">Conocenos</a> -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       NOSOTROS
+       ► PASO 6: Imagen lateral de la sección Nosotros
+         Reemplazar src por la foto del local/equipo
+  ════════════════════════════════════════════ -->
+  <section class="nosotros section-pad" id="nosotros">
+    <div class="container nosotros-inner">
+
+      <div class="nosotros-text">
+        <span class="section-tag">Sobre nosotros</span>
+        <h2 class="section-title">¿Quiénes Somos?</h2>
+        <p class="section-body">
+          Contá la historia del negocio, cuántos años de experiencia tienen,
+          qué los diferencia de la competencia y por qué el cliente debe elegirnos.
+          Máximo 3–4 oraciones directas y cercanas.
+        </p>
+        <ul class="features-list">
+          <li><i class="fa-solid fa-check feature-icon"></i> <span>Beneficio o diferencial 1</span></li>
+          <li><i class="fa-solid fa-check feature-icon"></i> <span>Beneficio o diferencial 2</span></li>
+          <li><i class="fa-solid fa-check feature-icon"></i> <span>Beneficio o diferencial 3</span></li>
+        </ul>
+         <!-- <a href="#contacto" class="btn btn-primary">Contactanos</a> -->
+      </div>
+
+      <div class="nosotros-image">
+        <!-- ► Reemplazar src y alt según el cliente -->
+        <img src="img/nosotros-placeholder.jpg"
+             alt="Equipo o local del negocio"
+             class="nosotros-img" />
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       GALERÍA
+       ► PASO 7: Agregar fotos reales del local/servicio
+         Reemplazar los src="img/gallery-X.jpg" (6 fotos recomendadas)
+         Las imágenes deben ser cuadradas o 4:3 para mejor resultado visual
+  ════════════════════════════════════════════ -->
+  <section class="galeria section-pad" id="galeria">
+    <div class="container">
+      <span class="section-tag">Nuestro trabajo</span>
+      <h2 class="section-title">Galería</h2>
+
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-item--featured">
+          <img src="img/gallery-1.jpg" alt="Foto del local o servicio 1" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery-2.jpg" alt="Foto del local o servicio 2" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery-3.jpg" alt="Foto del local o servicio 3" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+        <div class="gallery-item">
+          <img src="img/gallery-4.jpg" alt="Foto del local o servicio 4" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       UBICACIÓN
+       ► PASO 8: Insertar mapa de Google Maps
+         1. Ir a maps.google.com → buscar la dirección
+         2. Hacer clic en "Compartir" → "Insertar un mapa"
+         3. Copiar el <iframe> y pegar reemplazando el de abajo
+         ► Actualizar también la dirección, teléfono y horarios
+  ════════════════════════════════════════════ -->
+  <section class="ubicacion section-pad" id="ubicacion">
+    <div class="container">
+      <span class="section-tag">Dónde estamos</span>
+      <h2 class="section-title">Ubicación y Horarios</h2>
+
+      <div class="ubicacion-inner">
+
+        <div class="mapa-wrapper">
+          <!-- ► Reemplazar este iframe por el del negocio del cliente -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109739.6!2d-64.183!3d-31.4167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a28f55555555%3A0x0!2sCórdoba%2C+Argentina!5e0!3m2!1ses!2sar!4v1234567890"
+            width="100%"
+            height="380"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa de ubicación del negocio">
+          </iframe>
+        </div>
+
+        <div class="ubicacion-info">
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot info-icon"></i>
+            <div>
+              <strong>Dirección</strong>
+              <!-- ► Actualizar dirección -->
+              <p>Calle Principal 1234, Barrio, Ciudad</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-phone info-icon"></i>
+            <div>
+              <strong>Teléfono</strong>
+              <!-- ► Actualizar teléfono -->
+              <p><a href="tel:+549XXXXXXXXXX">+54 9 XXX XXX-XXXX</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-clock info-icon"></i>
+            <div>
+              <strong>Horarios</strong>
+              <!-- ► Actualizar horarios -->
+              <p>Lun–Vie: 9:00 a 18:00 hs</p>
+              <p>Sábados: 9:00 a 13:00 hs</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-envelope info-icon"></i>
+            <div>
+              <strong>Email</strong>
+              <!-- ► Actualizar email -->
+              <p><a href="mailto:contacto@tunegocio.com">contacto@tunegocio.com</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       INSTAGRAM SECTION
+       ► PASO 9: Actualizar el link al perfil de Instagram
+         Reemplazar "tunegocio" por el usuario real
+         Reemplazar también las 4 imágenes del feed de muestra
+  ════════════════════════════════════════════ -->
+  <section class="instagram-section section-pad" id="instagram">
+    <div class="container">
+      <div class="instagram-inner">
+
+        <div class="instagram-text">
+          <i class="fa-brands fa-instagram instagram-icon"></i>
+          <h2 class="section-title">Seguinos en Instagram</h2>
+          <p class="section-body">Mirá nuestros últimos trabajos, promociones y novedades.</p>
+          <!-- ► Reemplazar "tunegocio" por el @usuario real -->
+          <a href="https://www.instagram.com/tunegocio"
+             target="_blank"
+             rel="noopener"
+             class="btn btn-primary">
+            <i class="fa-brands fa-instagram"></i> @tunegocio
+          </a>
+        </div>
+
+        <!-- ► Opcional: reemplazar estas 4 imágenes por capturas reales del feed -->
+        <div class="instagram-feed">
+          <div class="feed-item">
+            <a href="https://www.instagram.com/p/CODIGO_DEL_POST_1/" target="_blank" rel="noopener" aria-label="Ver post en Instagram">
+    <img src="img/insta-1.jpg" alt="Post de Instagram 1" loading="lazy" /> </a>
+          </div>
+          <div class="feed-item">
+            <a href="https://www.instagram.com/p/CODIGO_DEL_POST_2/" target="_blank" rel="noopener" aria-label="Ver post en Instagram">
+    <img src="img/insta-2.jpg" alt="Post de Instagram 2" loading="lazy" /> </a>
+          </div>
+          <div class="feed-item">
+            <a href="https://www.instagram.com/p/CODIGO_DEL_POST_3/" target="_blank" rel="noopener" aria-label="Ver post en Instagram">
+    <img src="img/insta-3.jpg" alt="Post de Instagram 3" loading="lazy" /> </a>
+          </div>
+          <div class="feed-item">
+            <a href="https://www.instagram.com/p/CODIGO_DEL_POST_4/" target="_blank" rel="noopener" aria-label="Ver post en Instagram">
+    <img src="img/insta-4.jpg" alt="Post de Instagram 4" loading="lazy" /> </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+       ► PASO 11: Actualizar nombre, año y links sociales
+  ════════════════════════════════════════════ -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <!-- ► Reemplazar con nombre del cliente -->
+        <span class="footer-logo">Tu Negocio</span>
+        <p class="footer-tagline">Breve slogan del negocio.</p>
+      </div>
+
+      <div class="footer-social">
+        <!-- ► Actualizar href de cada red social (eliminar las que no use el cliente) -->
+        <a href="https://www.instagram.com/tunegocio"
+           target="_blank" rel="noopener"
+           aria-label="Instagram" class="social-link">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/tunegocio"
+           target="_blank" rel="noopener"
+           aria-label="Facebook" class="social-link">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/TUNUMERODEWHATSAPP"
+           target="_blank" rel="noopener"
+           aria-label="WhatsApp" class="social-link">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <p class="footer-copy">
+        <!-- ► Actualizar año y nombre -->
+        &copy; <span id="footerYear"></span> Tu Negocio. Todos los derechos reservados.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- ════════════════════════════════════════════
+       Lightbox overlay (gestionado desde main.js)
+  ════════════════════════════════════════════ -->
+  <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+  </div>
+
+
+  <!-- JavaScript compartido -->
+  <script src="main.js"></script>
+
+</body>
+</html>
