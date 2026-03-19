@@ -255,7 +255,7 @@ ul  { list-style: none; }
   display: flex;
   align-items: center;
   /* ► REEMPLAZAR con foto de la comida o local */
-  background-image: url('img/hero-placeholder.jpg');
+  background-image: url('img/banner-estetica-radianza.jpg');
   background-size: cover;
   background-position: center;
 }
